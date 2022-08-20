@@ -1,5 +1,6 @@
 [package]
 name = "agbrs_flash"
+description = "Crate for persisting game data to a GBA cartridge using Rust"
 version = "0.1.0"
 edition = "2021"
 resolver = "2"
