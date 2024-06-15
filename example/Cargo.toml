@@ -1,6 +1,6 @@
 [package]
 name = "example"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 resolver = "2"
 
@@ -9,5 +9,6 @@ resolver = "2"
 [dependencies]
 agbrs_flash = {path = "../"}
 
-agb = "0.11.1"
-serde = { version = "1.0.143", default-features = false, features = ["derive","alloc"] }
+agb = "0.20.4"
+serde = { version = "~1", default-features = false, features = ["derive","alloc"] }
+serde_derive = { version = "~1" }

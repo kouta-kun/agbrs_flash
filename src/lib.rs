@@ -7,13 +7,13 @@ use core::ops::Deref;
 use serde::{Deserialize, Serialize};
 
 #[repr(C, align(4))]
-pub struct FLASH_ID(pub [u8; 16]);
+pub struct FlashID(pub [u8; 16]);
 
 
 /// Identifies the ROM as a FLASH1M Cartridge
 #[link_section = ".text"]
 #[no_mangle]
-pub static FLASH_IDENTIFIER: FLASH_ID = FLASH_ID(*b"FLASH1M_Vnnn\0\0\0\0");
+pub static FLASH_IDENTIFIER: FlashID = FlashID(*b"FLASH1M_Vnnn\0\0\0\0");
 
 pub struct FlashMemory {
     flash_base: *mut u8,
@@ -31,8 +31,8 @@ const BACKUP_ADDRESS: usize = 0xFFF0;
 
 impl FlashMemory {
     #[doc(hidden)]
-    pub fn get_identifier() -> &'static FLASH_ID {
-        agb::println!("{:?}", (&FLASH_IDENTIFIER) as *const FLASH_ID);
+    pub fn get_identifier() -> &'static FlashID {
+        agb::println!("{:?}", (&FLASH_IDENTIFIER) as *const FlashID);
         return &FLASH_IDENTIFIER;
     }
 
