@@ -21,6 +21,7 @@ pub struct FlashMemory {
 
 // needed bc otherwise it can't be pub static
 unsafe impl Send for FlashMemory {}
+
 unsafe impl Sync for FlashMemory {}
 
 pub static MEMORY: FlashMemory = FlashMemory { flash_base: 0xE000000 as *mut u8 };
@@ -29,7 +30,6 @@ pub static MEMORY: FlashMemory = FlashMemory { flash_base: 0xE000000 as *mut u8 
 const BACKUP_ADDRESS: usize = 0xFFF0;
 
 impl FlashMemory {
-
     #[doc(hidden)]
     pub fn get_identifier() -> &'static FLASH_ID {
         agb::println!("{:?}", (&FLASH_IDENTIFIER) as *const FLASH_ID);
@@ -112,6 +112,7 @@ impl FlashMemory {
 
     /// Persist a data structure to the cartridge (needs to be serde serializable)
     pub fn write_structure<T: Serialize>(&self, structure: &T) -> bool {
+        unsafe { self.clear_memory(); }
         let structure_ser = postcard::to_allocvec(structure).unwrap();
         agb::println!("{}", structure_ser.len());
         let structure_length: [u8; 4] = (structure_ser.len() as u32).to_ne_bytes();
