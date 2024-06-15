@@ -85,7 +85,7 @@ dependencies = [
 
 [[package]]
 name = "agbrs_flash"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "agb",
  "postcard",
@@ -225,7 +225,7 @@ checksum = "3dca9240753cf90908d7e4aac30f630662b02aebaa1b58a3cadabdb23385b58b"
 
 [[package]]
 name = "example"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "agb",
  "agbrs_flash",
