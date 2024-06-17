@@ -15,17 +15,17 @@ struct TestObject {
 
 #[agb::entry]
 fn main(mut gba: agb::Gba) -> ! {
-    agbrs_flash::MEMORY.init();
-    let have_struct = agbrs_flash::MEMORY.have_structure();
+    let mut memory = agbrs_flash::FlashMemory::new_flash_128k(&mut gba);
+    let have_struct = memory.have_structure();
     agb::println!("Have structure? {}", have_struct);
     if !have_struct {
-        agbrs_flash::MEMORY.write_structure(&TestObject {
+        memory.write_structure(&TestObject {
             id: 1,
             text: "Hello World!".to_string(),
         });
         agb::println!("Restart to see the stored data")
     } else {
-        let obj: TestObject = agbrs_flash::MEMORY.read_structure().unwrap();
+        let obj: TestObject = memory.read_structure().unwrap();
         agb::println!("id: {} text: {}", obj.id, obj.text);
     }
     loop{}
