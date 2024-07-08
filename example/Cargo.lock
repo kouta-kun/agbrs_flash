@@ -14,11 +14,29 @@ version = "0.20.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a419ade712515c1a827f230c933f5a132e6d1a762a9854f72e257153ab47c901"
 dependencies = [
- "agb_fixnum",
- "agb_hashmap",
- "agb_image_converter",
- "agb_macros",
- "agb_sound_converter",
+ "agb_fixnum 0.20.4",
+ "agb_hashmap 0.20.4",
+ "agb_image_converter 0.20.4",
+ "agb_macros 0.20.4",
+ "agb_sound_converter 0.20.4",
+ "bilge",
+ "bitflags 2.5.0",
+ "critical-section",
+ "once_cell",
+ "portable-atomic",
+ "qrcodegen-no-heap",
+]
+
+[[package]]
+name = "agb"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
+dependencies = [
+ "agb_fixnum 0.20.5",
+ "agb_hashmap 0.20.5",
+ "agb_image_converter 0.20.5",
+ "agb_macros 0.20.5",
+ "agb_sound_converter 0.20.5",
  "bilge",
  "bitflags 2.5.0",
  "critical-section",
@@ -33,7 +51,16 @@ version = "0.20.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7b4d849dcae9840e514e705329f2db912a0ed21081d3529d6acd6322f183c823"
 dependencies = [
- "agb_macros",
+ "agb_macros 0.20.4",
+ "num-traits",
+]
+
+[[package]]
+name = "agb_fixnum"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
+dependencies = [
+ "agb_macros 0.20.5",
  "num-traits",
 ]
 
@@ -47,10 +74,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "agb_hashmap"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
+dependencies = [
+ "rustc-hash",
+]
+
+[[package]]
 name = "agb_image_converter"
 version = "0.20.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "64075e5b317bfce8add26e1091653716c3d5f9f4d0d1794745aef7bab9ad7167"
+dependencies = [
+ "asefile",
+ "fontdue",
+ "image",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.66",
+]
+
+[[package]]
+name = "agb_image_converter"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
 dependencies = [
  "asefile",
  "fontdue",
@@ -72,6 +120,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "agb_macros"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.66",
+]
+
+[[package]]
 name = "agb_sound_converter"
 version = "0.20.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -84,10 +142,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "agb_sound_converter"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
+dependencies = [
+ "hound",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.66",
+]
+
+[[package]]
 name = "agbrs_flash"
 version = "0.4.0"
 dependencies = [
- "agb",
+ "agb 0.20.5",
  "postcard",
  "serde",
  "serde_derive",
@@ -227,7 +296,7 @@ checksum = "3dca9240753cf90908d7e4aac30f630662b02aebaa1b58a3cadabdb23385b58b"
 name = "example"
 version = "0.3.0"
 dependencies = [
- "agb",
+ "agb 0.20.4",
  "agbrs_flash",
  "serde",
  "serde_derive",

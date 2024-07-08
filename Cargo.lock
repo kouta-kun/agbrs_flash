@@ -10,9 +10,8 @@ checksum = "f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe"
 
 [[package]]
 name = "agb"
-version = "0.20.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a419ade712515c1a827f230c933f5a132e6d1a762a9854f72e257153ab47c901"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
 dependencies = [
  "agb_fixnum",
  "agb_hashmap",
@@ -29,9 +28,8 @@ dependencies = [
 
 [[package]]
 name = "agb_fixnum"
-version = "0.20.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b4d849dcae9840e514e705329f2db912a0ed21081d3529d6acd6322f183c823"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
 dependencies = [
  "agb_macros",
  "num-traits",
@@ -39,18 +37,16 @@ dependencies = [
 
 [[package]]
 name = "agb_hashmap"
-version = "0.20.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e4e198deec8d53f9e24e88d67d2a45ad333f23e497cf6586af78dda70dcf07f"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
 dependencies = [
  "rustc-hash",
 ]
 
 [[package]]
 name = "agb_image_converter"
-version = "0.20.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "64075e5b317bfce8add26e1091653716c3d5f9f4d0d1794745aef7bab9ad7167"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
 dependencies = [
  "asefile",
  "fontdue",
@@ -62,9 +58,8 @@ dependencies = [
 
 [[package]]
 name = "agb_macros"
-version = "0.20.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fed38a12a7d9ed62a3bd21bf4236ef1024186213862cf83a97f2ac9094d7fc9f"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -73,9 +68,8 @@ dependencies = [
 
 [[package]]
 name = "agb_sound_converter"
-version = "0.20.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "51b9b3e0ce6ba5bb8d3889fb10006ea86b9e56e8db21474173585ebf59bd4a38"
+version = "0.20.5"
+source = "git+https://github.com/kouta-kun/agb.git#b6a978a6778f303cc4676be4f73226493b38ed69"
 dependencies = [
  "hound",
  "proc-macro2",
